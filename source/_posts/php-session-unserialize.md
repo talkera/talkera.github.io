@@ -10,14 +10,14 @@ tags: [PHP,session]
 
 PHP中的session序列化并不是单纯的serialize，而是形如：
 
-```
+```script
 key1|serialize后的value1;key2|serialize后的value2
 ```
 
 
 因此解析的关键在于使用 '|' 和 ';' 分割数据。
 
-```
+```php
 function parseSession($str){
 	$sessionData = [];
 	while(strpos($str, '|')){
