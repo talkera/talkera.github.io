@@ -1,5 +1,5 @@
 ---
-title: Git简答命令手册
+title: Git简单命令手册
 date: 2018-02-01
 categories: 其他
 tags: [Git]
