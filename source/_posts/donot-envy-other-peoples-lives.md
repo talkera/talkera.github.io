@@ -1,7 +1,7 @@
 ---
 title: 无需羡慕别人潇洒的人生
 date: 2018-03-11
-categories: 随笔
+categories: 阅读
 ---
 
 最近看了几篇文章，一下子解答了我心中一些疑惑。文章如下：[《中国真的有那么强大么》](http://mp.weixin.qq.com/s?__biz=MzAxNTMxMTc0MA==&mid=2651015737&idx=1&sn=205e10e92778e5e3f233e647d1b79bbe&chksm=80721c2ab705953c246dd310d3158746aa4f53e3a814fcb61653a8b8bc98aa344a84cd67e05e&scene=27#wechat_redirect) [《约炮抽烟纹身有什么了不起，有本事你过个顺利的人生看看啊》](https://www.jianshu.com/p/a7e536d7a1dc) [《屌丝的伟大，和伟大的屌丝》](https://site.douban.com/280724/widget/notes/193439332/note/654243806/)
