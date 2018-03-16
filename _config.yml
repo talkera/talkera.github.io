@@ -61,6 +61,7 @@ category_map:
     随笔: writing
     阅读: read
     其他: other
+    区块链: blockchain
 tag_map:
 	招聘: employment
 	管理: management
