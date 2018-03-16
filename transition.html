@@ -1,0 +1,49 @@
+
+<html>
+<head><title>The page has been moved</title></head>
+<body bgcolor="white">
+<center><h1>The page has been moved</h1></center>
+<hr><center>this page will redirect in a short time...</center>
+</body>
+</html>
+
+<script>
+
+var urlInfo = location.href.split('/');
+var page = urlInfo[3], id = urlInfo.pop();
+var conf = {
+	'category':{
+		1:"/categories/coding/",
+		2:"/categories/coding/",
+		3:"/categories/coding/",
+		5:"/categories/in-work/",
+		6:"/categories/writing/",
+		7:"/categories/server/"
+	},
+	'tag':{
+		1:"/tags/PHP/",3:"/tags/linux/",10:"/tags/svn/",15:"/tags/memcache/"
+	},
+	'post':{
+		16:'/post/in-work/2016/10/js-chchbox-disabled.html'
+		,18:'/post/in-work/2016/11/yii-fail-get-session-mc.html'
+		,14:'/post/coding/2017/08/think-AI-2017.html'
+		,4:'/post/coding/2016/06/yii-accessControl.html'
+		,1:'/post/coding/2015/12/learn-php.html'
+		,9:'/post/in-work/2017/06/svn-apache-https-migrate.html'
+		,13:'/post/coding/2017/08/js-qustion-var-declare.html'
+		,10:'/post/coding/2017/07/js-closure.html'
+		,15:'/post/in-work/2017/01/webserver-migrate.html'
+		,12:'/post/coding/2017/08/php-session-unserialize.html'
+		,17:'/post/coding/2016/03/professional-js-note-01.html'
+
+
+		,2:'/post/coding/2016/06/yii-filter.html'
+		,3:'/post/coding/2016/06/yii-RBAC.html'
+		,5:'/post/coding/2016/07/php-regular-express.html'
+		,6:'/post/coding/2016/07/php-regular-advanced.html'
+		,7:'/post/coding/2016/07/php-save-session.html'
+	}
+}
+if(conf[page] && conf[page][id]) location.href = conf[page][id];
+else location.href = "/404.html";
+</script>
