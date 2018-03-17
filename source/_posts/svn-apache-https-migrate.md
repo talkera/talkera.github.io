@@ -7,6 +7,8 @@ tags: [apache, svn, https, 迁移]
 
 之前Apache和svn都是源码编译安装，因为centos的yum仓库版本太低了。现在网上很多靠谱的yum源，然而版本却很新，所以用yum又快又好。
 
+<!--more-->
+
 ## 大概流程：
 
 1.  在新服务器搭建svn环境，复制hooks

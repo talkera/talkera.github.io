@@ -7,6 +7,8 @@ tags: [区块链, 以太坊]
 
 最近更新：2018-03-16
 
+<!--more-->
+
 ## 资源汇总
 ### Github
 以太坊官方账户: https://github.com/ethereum

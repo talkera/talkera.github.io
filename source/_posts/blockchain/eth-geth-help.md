@@ -5,6 +5,10 @@ categories: 区块链
 tags: [区块链, 以太坊, Geth]
 ---
 
+翻译`Geth --help`
+
+<!--more-->
+
 ## 命令
 ```
 account    管理账户

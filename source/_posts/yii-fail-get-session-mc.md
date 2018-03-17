@@ -7,6 +7,8 @@ tags: [yii,memcache]
 
 测试环境里有一个Yii项目突然无法从Memcache中获取到session了。
 
+<!--more-->
+
 ```
 'cache' => [
 	'class' => 'CMemCache',

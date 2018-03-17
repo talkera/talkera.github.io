@@ -7,6 +7,7 @@ tags: [PHP, yii]
 
 在网上找关于Yii的过滤器内容实在太少，而且大多数讲得不得要领。只好读源码来理解。现把笔记整理如下：
 
+<!--more-->
 
 正常情况下，访问某个`action`时，yii会通过调用`CController`的 `runActionWithFilters` 方法来执行`action`。核心代码如下：
 

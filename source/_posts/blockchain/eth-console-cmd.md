@@ -5,6 +5,10 @@ categories: 区块链
 tags: [区块链, 以太坊]
 ---
 
+常用的交互命令整理……未完待续
+
+<!--more-->
+
 参考：https://ethereumbuilders.gitbooks.io/guide/content/en/ethereum_javascript_api.html
 
 启动控制台有两种方式：

@@ -11,6 +11,8 @@ session.save_handler = "files"
 session.save_path = "/tmp/session"
 ```
 
+<!--more-->
+
 session默认以文件的形式保存在服务器。用session.save_path来设置保存session文件的路径. 
 也可以在php代码中通过session_save_path()函数来获取或设置保存路径。 如：
 

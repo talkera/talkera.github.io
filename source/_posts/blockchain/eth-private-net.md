@@ -2,8 +2,14 @@
 title: 搭建以太坊私链和私链集群
 date: 2018-03-16
 categories: 区块链
-tags: [区块链, 以太坊]
+tags: 
+	- 区块链
+	- 以太坊
 ---
+
+开发以太坊相关还是私链更方便。
+
+<!--more-->
 
 [下载Geth](https://geth.ethereum.org/downloads/)
 

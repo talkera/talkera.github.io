@@ -8,6 +8,8 @@ tags: [PHP, yii]
 网站某些页面并非无限制访问，有些需要登录，有些需要高级用户权限。因此一套良好的访问控制机制必不可少。 
 Yii自带访问控制的功能，只需少许配置就能使用。
 
+<!--more-->
+
 进行访问控制前，要先了解Yii的filter和RBAC。因为访问控制基本都是建立在这两者的基础上。
 {% post_link yii-RBAC  [查看Yii的RBAC介绍] %}
 {% post_link yii-filter  [查看Yii的Filter] %}

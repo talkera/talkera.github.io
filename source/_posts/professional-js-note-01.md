@@ -5,7 +5,7 @@ categories: 编程语言
 tags: [javascript]
 ---
 前三章知识点整理
-
+<!--more-->
 ## 数据类型
 
 JavaScript有5个基本数据类型：undefined boolean number string null

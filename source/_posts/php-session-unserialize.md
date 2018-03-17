@@ -8,6 +8,8 @@ tags: [PHP,session]
 
 最近有个需求要读取保存在memcache中session字符串。网上找了一圈后发现，PHP似乎没有提供直接反序列化session的函数，只好自己写了一个。
 
+<!--more-->
+
 PHP中的session序列化并不是单纯的serialize，而是形如：
 
 ```script

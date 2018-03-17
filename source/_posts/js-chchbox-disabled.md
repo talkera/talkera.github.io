@@ -6,6 +6,8 @@ tags: [javascript]
 ---
 有段代码用jquery设置checkbox总是不生效。并不是常见的那种checked存不存在的问题，而是出在了dom结构上。
 
+<!--more-->
+
 ```
 <!--dom-->
 <label>
