@@ -3,4 +3,4 @@
 	url = https://github.com/viosey/hexo-theme-material.git
 [submodule "themes/next"]
 	path = themes/next
-	url = git@github.com:talkera/hexo-theme-next.git
+	url = https://github.com/talkera/hexo-theme-next.git
