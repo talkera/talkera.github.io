@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: localhost
+url: sudobash.cn
 root: /
 permalink: post/:category/:year/:month/:title.html
 permalink_defaults:
@@ -62,9 +62,12 @@ category_map:
     阅读: read
     其他: other
     区块链: blockchain
+    职场: career
 tag_map:
 	招聘: employment
 	管理: management
+	以太坊: ethereum
+	区块链: blockchain
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
