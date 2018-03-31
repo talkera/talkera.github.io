@@ -53,11 +53,11 @@ index_generator:
   order_by: -date
   
 # Category & Tag
-default_category: other
+# default_category: other
 category_map:
     编程语言: coding
     工作点滴: in-work
-    运维相关: server
+    运维相关: devops
     随笔: writing
     阅读: read
     其他: other
