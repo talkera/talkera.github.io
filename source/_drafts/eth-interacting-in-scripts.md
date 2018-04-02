@@ -8,43 +8,41 @@ tags:
 
 除了控制台外，以太坊还支持用脚本与geth交互。除了JS外，还支持Python、PHP Java等。
 
-{% note class_name %} 如果安装失败 {% endnote %}
+{% note warning %} 然而php要7.1 node安装web3不一定成功 {% endnote %}
 
 <!--more-->
 
-## PHP
+## PHP与geth交互
 Github:https://github.com/sc0Vu/web3.php
 
-php要7.1
 
+## JS与geth交互
 
-## JS交互
+geth内部集成了node的控制台，在以太坊上的操作大多数操作都是通过web3模块来进行的，按理说js与node的交互应当是水到渠成的。然而node的web3安装却遭遇重大挫折，目前只在mac和windows上安装成功，centos6.8和centos7都失败了。
 
-geth内部集成了node的控制台，在以太坊上的操作大多数操作都是通过web3模块来进行的，按理说js与node的交互应当是水到渠成的。然而node的web3安装却遭遇重大挫折，目前只在windows上安装成功，centos6.8和centos7都失败了。
+{% note warning %} npm 默认安装的是1.0版本的 {% endnote %}
 
-另外geth控制台和外部脚本操作略有区别：geth集成的web3模块是`0.2`版本的，而npm安装的是`1.0`版本的。
+另外geth控制台和外部脚本操作略有区别：geth集成的web3模块是`0.20.1`版本的，而npm安装的是`1.0`版本的，版本更高，文档也略有差别，本文以`1.0`版本为准。
 - 0.2版本文档：https://github.com/ethereum/wiki/wiki/JavaScript-API
 - 1.0版本文档：http://web3js.readthedocs.io/en/1.0/index.html
 
-## node环境
-安装node网上有很多。需要注意两点：npm全局安装的路径，和node的环境变量`NODE_PATH`要一致。需要安装
 
 ```bash
-#默认值
-npm config ls -l
-npm config list
+#安装web3
+npm intall -g web3@^0.20.1
 
-echo $NODE_PATH
-
-npm config set prefix /usr/local/node/lib -g
-
-npm intall -g webpack
-npm intall -g web3
-
-
+#运行一个geth孤点 开启rpc和控制台
 geth --nodiscover console --rpc --rpcapi 'web3,eth,debug' --rpcport 8545 --rpccorsdomain '*'
-
 ```
+
+web3成功的标志是：**进入node控制台，能require到web3**
+```bash
+$ node
+> require('web3').version
+'1.0.0-beta.33'
+```
+
+{% note warning %} 如果web3安装不成功，就不要继续了 {% endnote %}
 
 interact.js
 ```
