@@ -1,7 +1,7 @@
 ---
 title: 优雅的设置linux环境变量
 date: 2018-03-31
-categories: 运维相关
+categories: 服务运维
 tags:
 	- linux
 ---
