@@ -1,0 +1,17 @@
+menu:
+  home: / || home
+  编程语言: /categories/coding/ || code
+  工作点滴: /categories/in-work/ || tasks
+  服务运维: /categories/devops/ || cogs
+  区块链: /categories/blockchain/ || link
+  阅读: /categories/read/ || book
+  随笔: /categories/writing/ || edit
+  tags: /tags/ || tags
+  categories: /categories/ || th
+  archives: /archives/ || archive
+
+scheme: Gemini
+
+highlight_theme: night eighties
+
+baidu_analytics: 4921dd99e49896e2d95d6f737bf8e9fd
