@@ -18,14 +18,18 @@ Github:https://github.com/sc0Vu/web3.php
 
 ## JS与geth交互
 
-geth内部集成了node的控制台，在以太坊上的操作大多数操作都是通过web3模块来进行的，按理说js与node的交互应当是水到渠成的。然而node的web3安装却遭遇重大挫折，目前只在mac和windows上安装成功，centos6.8和centos7都失败了。
+JS交互需要搭建node环境，尤其是环境变量的设置.参考 {% post_link coding/node-env-2018 %}
 
-{% note warning %} npm 默认安装的是1.0版本的 {% endnote %}
+geth内部集成了node的控制台，在以太坊上的操作大多数操作都是通过web3模块来进行的，按理说js与node的交互应当是水到渠成的。然而node的web3安装却磨难重重。
 
-另外geth控制台和外部脚本操作略有区别：geth集成的web3模块是`0.20.1`版本的，而npm安装的是`1.0`版本的，版本更高，文档也略有差别，本文以`1.0`版本为准。
+{% note warning %} geth内部集成的web3是0.2版，但是npm 默认安装的是1.0版本的，1.0还没有release 所以不指定版本安装可能会出现各种各样的问题！ {% endnote %}
+
 - 0.2版本文档：https://github.com/ethereum/wiki/wiki/JavaScript-API
 - 1.0版本文档：http://web3js.readthedocs.io/en/1.0/index.html
 
+鉴于`1.0`各种安装出错，并且跟geth不一致，还是装`0.2`版本比较好。mac和win下都能正常安装，唯独linxu下略麻烦。
+
+{% note warning %} linux要用普通用户进行全局安装，不能用root。 如果权限受限，要执行chmod 777{% endnote %}
 
 ```bash
 #安装web3
@@ -35,18 +39,10 @@ npm intall -g web3@^0.20.1
 geth --nodiscover console --rpc --rpcapi 'web3,eth,debug' --rpcport 8545 --rpccorsdomain '*'
 ```
 
-web3成功的标志是：**进入node控制台，能require到web3**
-```bash
-$ node
-> require('web3').version
-'1.0.0-beta.33'
-```
-
-{% note warning %} 如果web3安装不成功，就不要继续了 {% endnote %}
+web3成功的标志是：**进入node控制台，能require到web3**
 
 interact.js
 ```
-var fs = require("fs")
 var web3 = require('web3');
 web3 = new web3();
 web3.setProvider( new web3.providers.HttpProvider('http://127.0.0.1:8545') )
@@ -55,7 +51,7 @@ var eth = web3.eth
 
 console.log(eth.accounts)
 
-var api = [{"constant":false,"inputs":[{"name":"_initialAmount","type":"uint256"},{"name":"_name","type":"string"},{"name":"_decimals","type":"uint8"},{"name":"_symbol","type":"string"}],"name":"createEIP20","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"}],"name":"created","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"isEIP20","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"EIP20ByteCode","outputs":[{"name":"","type":"bytes"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_tokenContract","type":"address"}],"name":"verifyEIP20","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]
+var abi = [{"constant":false,"inputs":[{"name":"_initialAmount","type":"uint256"},{"name":"_name","type":"string"},{"name":"_decimals","type":"uint8"},{"name":"_symbol","type":"string"}],"name":"createEIP20","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"}],"name":"created","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"isEIP20","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"EIP20ByteCode","outputs":[{"name":"","type":"bytes"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_tokenContract","type":"address"}],"name":"verifyEIP20","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]
 
 var add = '0x0f85579751197DC71A1fFf9089892558b7F62005'
 

@@ -1,7 +1,7 @@
 ---
 title: node环境搭建
 date: 2018-04-02
-categories: 服务运维
+categories: 编程语言
 tags: [javascript,node]
 ---
 
