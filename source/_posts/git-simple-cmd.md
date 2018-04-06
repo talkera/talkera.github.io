@@ -104,9 +104,9 @@ git reset filename.php
 git reset filename.php
 git checkout filename.php
 
-#将文件还原到某版本
+#将文件还原到某版本 (建议不要省略'--'，注意前后有空格)
 git log filename.php
-git checkout <commitID> filename.php
+git checkout <commitID> -- filename.php
 
 #已commit的文件，要撤销上次提交
 git reset HEAD~1
