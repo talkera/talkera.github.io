@@ -14,7 +14,6 @@ tags: [go, pool]
 
 <!--more-->
 
-talk is cheap,see the code
 ```go
 package main
 
