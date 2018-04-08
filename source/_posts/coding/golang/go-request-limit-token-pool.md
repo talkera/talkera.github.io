@@ -53,21 +53,20 @@ func NewThrottle(D time.Duration, C, maxNum int64) *throttle {
 
 //每周期重新填充一次令牌池
 func (t *throttle) reset() {
-	timer := time.NewTimer(t.D)
-	for {
-		<-timer.C //阻塞1个周期
+	ticker := time.NewTicker(t.D)
+	for _ = range ticker.C {
 		//goroutine数量不超过最大数量时再填充令牌池
-		if t.num < t.maxNum {
-			t.Mu.Lock()
-			supply := t.C - int64(len(t.Token))
-			fmt.Printf("reset token:%d\n", supply)
-			for supply > 0 {
-				t.Token <- true
-				supply--
-			}
-			t.Mu.Unlock()
+		if t.num >= t.maxNum {
+			continue
 		}
-		timer.Reset(t.D) //重置定时器
+		t.Mu.Lock()
+		supply := t.C - int64(len(t.Token))
+		fmt.Printf("reset token:%d\n", supply)
+		for supply > 0 {
+			t.Token <- true
+			supply--
+		}
+		t.Mu.Unlock()
 	}
 }
 
