@@ -1,5 +1,5 @@
 ---
-title: 0001-两数相加
+title: 0002-两数相加
 date: 2018-04-11
 categories: leetcode-go
 tags: [go, leetcode]
