@@ -67,8 +67,8 @@ tag_map:
 	招聘: employment
 	管理: management
 	以太坊: ethereum
-  区块链: blockchain
-  golang: go
+	区块链: blockchain
+	golang: go
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
