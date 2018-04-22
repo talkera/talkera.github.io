@@ -69,6 +69,7 @@ tag_map:
 	以太坊: ethereum
 	区块链: blockchain
 	golang: go
+	心灵鸡汤: chicken-soup
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
