@@ -64,6 +64,7 @@ category_map:
     区块链: blockchain
     职场: career
 tag_map:
+	设计模式: design-pattern
 	招聘: employment
 	管理: management
 	以太坊: ethereum
