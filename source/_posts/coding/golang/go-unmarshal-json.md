@@ -20,6 +20,20 @@ Go解析json遇到了大数字、不定格式等特殊情况，在此做了一�
 ## 数字的解析
 默认情况下，go对json解析过程中遇到的数字都会当做float64处理。如果数字过大会有精度丢失。可以使用json.Number来处理。
 
+### Unmarshal
+```go
+val := `{"id": 100010001000100010001000 }` //26位数字
+var y map[string]json.Number
+json.Unmarshal([]byte(val), &y)
+fmt.Println(y) //map[id:100010001000100010001000]
+
+z, _ := json.Marshal(struct {
+	Id json.Number `json:"id"`
+}{y["id"]})
+fmt.Println(string(z)) //{"id":100010001000100010001000}
+```
+
+### Decode
 ```go
 val := `{"id": 100010001000100010001000 }` //26位数字
 val2 := strings.NewReader(val)             //先转成io.Reader
@@ -40,7 +54,7 @@ fmt.Println(string(newJson)) //json.Number编组结果
 map[string]interface {}{"id":"100010001000100010001000"}
 {"id":100010001000100010001000}
 ```
-如果需要使用`json.Number`只能使用`json.Decoder` 因此只能操作`io.Reader`类型的JSON数据。
+使用`json.Decoder`只能操作`io.Reader`类型的JSON数据。
 
 
 ## 不定类型的解析
