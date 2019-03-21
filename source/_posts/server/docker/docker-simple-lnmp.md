@@ -69,5 +69,25 @@ php连接数据库如下
 $pdo = new PDO('mysql:dbname=test;host=myDatabase;port=3306','root',''); //此处的host是 mysql容器的name
 ```
 
+docker-compose将几个docker连接到一个虚拟的局域网中，如果要访问某个docker可以直接访问其IP，但是IP一般不固定，所以改用`name`(如：php, myDatabase)
+
+## docker连接宿主机的mysql
+如果mysql单独运行，php代码要连接mysql就不能用name了，因为宿主机没有name
+
+首先查看容器的具体IP地址
+```
+docker inspect <容器ID> | grep -i ip
+```
+宿主机IP与容器同网段，而且是`XXX.XXX.XXX.1`
+比如容器查出来ip是`192.169.0.2`,那么宿主机ip就是`192.168.0.1`
+在容器内，可以通过`192.168.0.1`访问宿主机
+
+PHP代码应该变为
+```
+$pdo = new PDO('mysql:dbname=test;host=192.168.0.1;port=3306','root','');
+```
+
 **搭建Docker往往是辛苦一人，造福大家。**无论是`Dockerfile`还是 `docker-compose.yml` 只要有一个人写出来，其他人只需要简单看一下就将结构和依赖能了然于心，并且将环境跑起来。
 
+## 参考
+- http://www.voidcn.com/article/p-nyrhtuzl-d.html
